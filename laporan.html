@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Pemesanan - Toko Buku Cakra</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="halaman-laporan">
+    <header>
+        <div class="header-isi">
+            <p class="nama-toko"><img src="assets/logo.png" alt="Logo Toko Buku Cakra" class="logo"> Toko Buku Cakra</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="stok.html">Stok/Katalog</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="laporan.html" class="aktif">Laporan</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="#" class="link-logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Laporan Pemesanan</h1>
+
+        <section>
+            <h2>Ringkasan Semua Pesanan</h2>
+            <div class="tabel-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nomor DO</th>
+                            <th>Nama Pemesan</th>
+                            <th>Tanggal</th>
+                            <th>Ekspedisi</th>
+                            <th>Status</th>
+                            <th class="kanan">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="isiLaporan"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">Total Keseluruhan (<span id="jumlahPesanan">0</span> pesanan)</td>
+                            <td class="kanan" id="totalKeseluruhan">Rp 0</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Rekap Buku Terjual</h2>
+            <p>Dihitung dari pesanan yang dibuat melalui halaman Checkout.</p>
+            <div class="tabel-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Kode</th>
+                            <th>Judul Buku</th>
+                            <th class="kanan">Jumlah Terjual</th>
+                            <th class="kanan">Pendapatan</th>
+                        </tr>
+                    </thead>
+                    <tbody id="isiRekapBuku"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Toko Buku Cakra - Tugas UTS Pemrograman Web 1
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

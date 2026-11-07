@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Pengiriman - Toko Buku Cakra</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS internal: khusus untuk progress bar status pengiriman -->
+    <style>
+        .progress-luar {
+            width: 100%;
+            height: 22px;
+            background-color: #e9ecef;
+            border: 1px solid #d6dbe0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-isi {
+            height: 100%;
+            width: 0;
+            color: #ffffff;
+            font-size: 12px;
+            line-height: 22px;
+            text-align: center;
+            transition: width 0.5s;
+        }
+
+        .tahap-status {
+            display: flex;
+            font-size: 13px;
+            color: #888888;
+            margin-top: 6px;
+        }
+
+        /* tiap tahap mewakili 25% progress */
+        .tahap-status span {
+            width: 25%;
+            text-align: right;
+        }
+
+        .tahap-status .tahap-aktif {
+            color: #333333;
+            font-weight: bold;
+        }
+
+        .form-cari {
+            display: flex;
+            gap: 8px;
+        }
+
+        .form-cari input {
+            flex: 1;
+        }
+    </style>
+</head>
+<body id="halaman-tracking">
+    <header>
+        <div class="header-isi">
+            <p class="nama-toko"><img src="assets/logo.png" alt="Logo Toko Buku Cakra" class="logo"> Toko Buku Cakra</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="stok.html">Stok/Katalog</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="tracking.html" class="aktif">Tracking</a></li>
+                <li><a href="laporan.html">Laporan</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="#" class="link-logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Tracking Pengiriman</h1>
+
+        <section>
+            <h2>Cari Pesanan</h2>
+            <form id="formTracking" novalidate>
+                <label for="inputDO">Nomor Delivery Order (DO)</label>
+                <div class="form-cari">
+                    <input type="text" id="inputDO" placeholder="Contoh: 20230012">
+                    <button type="submit">Cari</button>
+                </div>
+            </form>
+            <p class="pesan-error" id="errorTracking"></p>
+        </section>
+
+        <!-- hasil pencarian, disembunyikan sampai data ditemukan -->
+        <section id="hasilTracking" hidden>
+            <h2>Detail Pengiriman</h2>
+
+            <p><strong>Status Pengiriman:</strong> <span id="labelStatus" class="label-status"></span></p>
+            <div class="progress-luar">
+                <div class="progress-isi" id="progressIsi"></div>
+            </div>
+            <div class="tahap-status" id="tahapStatus">
+                <span>Diproses</span>
+                <span>Dikirim</span>
+                <span>Dalam Perjalanan</span>
+                <span>Selesai</span>
+            </div>
+
+            <br>
+            <table class="tabel-detail">
+                <tbody>
+                    <tr><th>Nomor DO</th><td id="detailDO"></td></tr>
+                    <tr><th>Nama Pemesan</th><td id="detailNama"></td></tr>
+                    <tr><th>Ekspedisi</th><td id="detailEkspedisi"></td></tr>
+                    <tr><th>Tanggal Kirim</th><td id="detailTanggal"></td></tr>
+                    <tr><th>Jenis Paket</th><td id="detailPaket"></td></tr>
+                    <tr><th>Total Pembayaran</th><td id="detailTotal"></td></tr>
+                </tbody>
+            </table>
+
+            <!-- CSS inline -->
+            <h2 style="margin-top: 20px;">Riwayat Perjalanan</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Waktu</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody id="isiPerjalanan"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Toko Buku Cakra - Tugas UTS Pemrograman Web 1
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

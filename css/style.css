@@ -1,0 +1,385 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #333333;
+    background-color: #f4f6f8;
+}
+
+/* ===== Header & Navbar ===== */
+header {
+    background-color: #1f4e79;
+    color: #ffffff;
+}
+
+.header-isi {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 14px 16px;
+}
+
+.nama-toko {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+}
+
+nav {
+    background-color: #17405f;
+}
+
+nav ul {
+    list-style: none;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: block;
+    padding: 10px 12px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a.aktif {
+    background-color: #1f4e79;
+}
+
+/* ===== Konten utama ===== */
+main {
+    max-width: 1000px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #1f4e79;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 18px;
+    color: #1f4e79;
+    margin-top: 0;
+}
+
+section {
+    background-color: #ffffff;
+    border: 1px solid #d6dbe0;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    font-size: 13px;
+    color: #777777;
+    padding: 16px;
+    border-top: 1px solid #d6dbe0;
+    margin-top: 30px;
+}
+
+/* ===== Form ===== */
+.form-baris {
+    margin-bottom: 12px;
+}
+
+.form-baris label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border: 1px solid #b8c0c8;
+    border-radius: 3px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #1f4e79;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+}
+
+fieldset.pilihan-radio {
+    border: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+}
+
+.pilihan-radio legend {
+    margin-bottom: 8px;
+}
+
+.pilihan-radio label {
+    display: inline;
+    font-weight: normal;
+    margin-right: 14px;
+}
+
+.pesan-error {
+    color: #b02a2a;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+/* ===== Tombol ===== */
+button,
+.tombol {
+    display: inline-block;
+    padding: 8px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #1f4e79;
+    border: 1px solid #1f4e79;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button:hover,
+.tombol:hover {
+    background-color: #17405f;
+}
+
+.tombol-abu {
+    color: #333333;
+    background-color: #e9ecef;
+    border-color: #b8c0c8;
+}
+
+.tombol-abu:hover {
+    background-color: #d6dbe0;
+}
+
+.tombol-merah {
+    background-color: #b02a2a;
+    border-color: #b02a2a;
+}
+
+.tombol-merah:hover {
+    background-color: #8e2020;
+}
+
+.tombol-kecil {
+    padding: 4px 10px;
+    font-size: 13px;
+}
+
+/* ===== Tabel ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+th,
+td {
+    border: 1px solid #d6dbe0;
+    padding: 8px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #1f4e79;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tfoot td {
+    font-weight: bold;
+    background-color: #e9ecef;
+}
+
+.gambar-buku {
+    width: 50px;
+    height: 70px;
+    object-fit: cover;
+    border: 1px solid #d6dbe0;
+}
+
+.kanan {
+    text-align: right;
+}
+
+input.input-jumlah {
+    width: 70px;
+}
+
+/* ===== Halaman Login ===== */
+.kotak-login {
+    max-width: 380px;
+    margin: 40px auto;
+}
+
+.link-bawah {
+    margin-top: 14px;
+    text-align: center;
+}
+
+.tombol-link {
+    background: none;
+    border: none;
+    color: #1f4e79;
+    padding: 0 6px;
+    text-decoration: underline;
+}
+
+.tombol-link:hover {
+    background: none;
+    color: #17405f;
+}
+
+/* ===== Modal Box ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal.tampil {
+    display: block;
+}
+
+.modal-isi {
+    background-color: #ffffff;
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.modal-isi h2 {
+    margin-bottom: 14px;
+}
+
+.modal-tombol {
+    margin-top: 14px;
+    text-align: right;
+}
+
+.nomor-do {
+    font-size: 26px;
+    font-weight: bold;
+    color: #1f4e79;
+    text-align: center;
+    padding: 10px;
+    border: 1px dashed #1f4e79;
+    letter-spacing: 2px;
+}
+
+/* ===== Dashboard ===== */
+.menu-dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.menu-dashboard a {
+    display: block;
+    padding: 18px 12px;
+    text-align: center;
+    color: #1f4e79;
+    background-color: #ffffff;
+    border: 1px solid #1f4e79;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-dashboard a:hover {
+    background-color: #1f4e79;
+    color: #ffffff;
+}
+
+.menu-dashboard a.menu-logout {
+    color: #b02a2a;
+    border-color: #b02a2a;
+}
+
+.menu-dashboard a.menu-logout:hover {
+    background-color: #b02a2a;
+    color: #ffffff;
+}
+
+/* ===== Detail (tracking & history) ===== */
+.tabel-detail th {
+    width: 180px;
+    background-color: #e9ecef;
+    color: #333333;
+}
+
+.label-status {
+    white-space: nowrap;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.daftar-buku {
+    margin: 0;
+    padding-left: 18px;
+}
+
+/* ===== Layar kecil ===== */
+@media (max-width: 700px) {
+
+    .form-grid,
+    .menu-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .tabel-scroll {
+        overflow-x: auto;
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stok/Katalog - Toko Buku Cakra</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="halaman-stok">
+    <header>
+        <div class="header-isi">
+            <p class="nama-toko"><img src="assets/logo.png" alt="Logo Toko Buku Cakra" class="logo"> Toko Buku Cakra</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="stok.html" class="aktif">Stok/Katalog</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="laporan.html">Laporan</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="#" class="link-logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Informasi Stok/Katalog Buku</h1>
+
+        <section>
+            <h2>Daftar Buku</h2>
+            <div class="tabel-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Sampul</th>
+                            <th>Kode</th>
+                            <th>Judul Buku</th>
+                            <th>Jenis</th>
+                            <th>Edisi</th>
+                            <th class="kanan">Stok</th>
+                            <th class="kanan">Harga</th>
+                        </tr>
+                    </thead>
+                    <!-- isi tabel dibuat lewat JavaScript -->
+                    <tbody id="isiTabelStok"></tbody>
+                </table>
+            </div>
+            <p>Total judul buku: <strong id="jumlahJudul">0</strong></p>
+        </section>
+
+        <section>
+            <h2>Tambah Stok Baru</h2>
+            <form id="formStok" novalidate>
+                <div class="form-grid">
+                    <div class="form-baris">
+                        <label for="stokKode">Kode Barang</label>
+                        <input type="text" id="stokKode" placeholder="Contoh: MKDU4111">
+                    </div>
+                    <div class="form-baris">
+                        <label for="stokNama">Judul Buku</label>
+                        <input type="text" id="stokNama">
+                    </div>
+                    <div class="form-baris">
+                        <label for="stokJenis">Jenis Barang</label>
+                        <select id="stokJenis">
+                            <option value="">-- Pilih Jenis --</option>
+                            <option value="Buku Ajar">Buku Ajar</option>
+                            <option value="Modul">Modul</option>
+                            <option value="Buku Referensi">Buku Referensi</option>
+                        </select>
+                    </div>
+                    <div class="form-baris">
+                        <label for="stokEdisi">Edisi</label>
+                        <input type="number" id="stokEdisi" min="1">
+                    </div>
+                    <div class="form-baris">
+                        <label for="stokJumlah">Jumlah Stok</label>
+                        <input type="number" id="stokJumlah" min="1">
+                    </div>
+                    <div class="form-baris">
+                        <label for="stokHarga">Harga (Rp)</label>
+                        <input type="number" id="stokHarga" min="1" placeholder="Contoh: 150000">
+                    </div>
+                </div>
+                <p class="pesan-error" id="errorStok"></p>
+                <button type="submit">Tambah ke Tabel</button>
+                <button type="reset" class="tombol-abu">Kosongkan</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Toko Buku Cakra - Tugas UTS Pemrograman Web 1
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

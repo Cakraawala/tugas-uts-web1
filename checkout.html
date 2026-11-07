@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Toko Buku Cakra</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="halaman-checkout">
+    <header>
+        <div class="header-isi">
+            <p class="nama-toko"><img src="assets/logo.png" alt="Logo Toko Buku Cakra" class="logo"> Toko Buku Cakra</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="stok.html">Stok/Katalog</a></li>
+                <li><a href="checkout.html" class="aktif">Checkout</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="laporan.html">Laporan</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="#" class="link-logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Checkout / Pemesanan</h1>
+
+        <section>
+            <h2>1. Pilih Buku</h2>
+            <form id="formPilihBuku" novalidate>
+                <div class="form-grid">
+                    <div class="form-baris">
+                        <label for="pilihBuku">Judul Buku</label>
+                        <!-- pilihan buku diisi lewat JavaScript -->
+                        <select id="pilihBuku">
+                            <option value="">-- Pilih Buku --</option>
+                        </select>
+                    </div>
+                    <div class="form-baris">
+                        <label for="jumlahBuku">Jumlah</label>
+                        <input type="number" id="jumlahBuku" min="1" value="1">
+                    </div>
+                </div>
+                <button type="submit">Tambah ke Pesanan</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>2. Daftar Pesanan</h2>
+            <div class="tabel-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Judul Buku</th>
+                            <th class="kanan">Harga</th>
+                            <th>Jumlah</th>
+                            <th class="kanan">Subtotal</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="isiTabelPesanan"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">Total Harga</td>
+                            <td class="kanan" id="totalHarga">Rp 0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Data Pemesan dan Pembayaran</h2>
+            <form id="formPemesan" novalidate>
+                <div class="form-grid">
+                    <div class="form-baris">
+                        <label for="pemesanNama">Nama Lengkap</label>
+                        <input type="text" id="pemesanNama">
+                    </div>
+                    <div class="form-baris">
+                        <label for="pemesanEmail">Email</label>
+                        <input type="email" id="pemesanEmail">
+                    </div>
+                    <div class="form-baris">
+                        <label for="pemesanHp">No. HP</label>
+                        <input type="tel" id="pemesanHp" placeholder="Contoh: 081234567890">
+                    </div>
+                    <div class="form-baris">
+                        <label for="pemesanEkspedisi">Ekspedisi</label>
+                        <select id="pemesanEkspedisi">
+                            <option value="">-- Pilih Ekspedisi --</option>
+                            <option value="JNE">JNE</option>
+                            <option value="Pos Indonesia">Pos Indonesia</option>
+                            <option value="J&amp;T Express">J&amp;T Express</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-baris">
+                    <label for="pemesanAlamat">Alamat Pengiriman</label>
+                    <textarea id="pemesanAlamat" rows="3"></textarea>
+                </div>
+                <div class="form-grid">
+                    <div class="form-baris">
+                        <label for="pemesanPaket">Jenis Paket</label>
+                        <select id="pemesanPaket">
+                            <option value="Reguler">Reguler (3-5 hari)</option>
+                            <option value="Kilat">Kilat (1-2 hari)</option>
+                        </select>
+                    </div>
+                    <fieldset class="form-baris pilihan-radio">
+                        <legend><strong>Metode Pembayaran</strong></legend>
+                        <input type="radio" name="pembayaran" id="bayarTransfer" value="Transfer Bank">
+                        <label for="bayarTransfer">Transfer Bank</label>
+                        <input type="radio" name="pembayaran" id="bayarEwallet" value="E-Wallet">
+                        <label for="bayarEwallet">E-Wallet</label>
+                        <input type="radio" name="pembayaran" id="bayarCod" value="COD">
+                        <label for="bayarCod">COD</label>
+                    </fieldset>
+                </div>
+                <p class="pesan-error" id="errorCheckout"></p>
+                <button type="submit">Buat Pesanan</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Modal pesanan berhasil -->
+    <div class="modal" id="modalBerhasil">
+        <div class="modal-isi">
+            <h2>Pesanan Berhasil</h2>
+            <p>Terima kasih, pesanan Anda sudah kami terima.</p>
+            <p>Nomor Delivery Order (DO):</p>
+            <p class="nomor-do" id="nomorDOBaru"></p>
+            <p>Simpan nomor ini untuk mengecek status pengiriman di halaman Tracking.</p>
+            <div class="modal-tombol">
+                <button type="button" class="tombol-abu" id="tutupBerhasil">Tutup</button>
+                <a href="tracking.html" class="tombol" id="linkLacak">Lacak Pesanan</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Toko Buku Cakra - Tugas UTS Pemrograman Web 1
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

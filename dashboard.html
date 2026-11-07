@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Toko Buku Cakra</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="halaman-dashboard">
+    <header>
+        <div class="header-isi">
+            <p class="nama-toko"><img src="assets/logo.png" alt="Logo Toko Buku Cakra" class="logo"> Toko Buku Cakra</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html" class="aktif">Dashboard</a></li>
+                <li><a href="stok.html">Stok/Katalog</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="laporan.html">Laporan</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="#" class="link-logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Dashboard</h1>
+
+        <section>
+            <h2 id="teksGreeting">Selamat Datang</h2>
+            <!-- CSS inline -->
+            <p style="margin-bottom: 0; color: #666666;">Hari ini: <span id="teksTanggal"></span></p>
+        </section>
+
+        <section>
+            <h2>Menu Utama</h2>
+            <div class="menu-dashboard">
+                <a href="stok.html">Informasi Stok/Katalog</a>
+                <a href="checkout.html">Checkout/Pemesanan</a>
+                <a href="tracking.html">Tracking Pengiriman</a>
+                <a href="laporan.html">Laporan Pemesanan</a>
+                <a href="history.html">History Transaksi</a>
+                <a href="#" class="link-logout menu-logout">Logout</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Toko Buku Cakra - Tugas UTS Pemrograman Web 1
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

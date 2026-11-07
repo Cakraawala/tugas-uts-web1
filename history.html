@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Transaksi - Toko Buku Cakra</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="halaman-history">
+    <header>
+        <div class="header-isi">
+            <p class="nama-toko"><img src="assets/logo.png" alt="Logo Toko Buku Cakra" class="logo"> Toko Buku Cakra</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="stok.html">Stok/Katalog</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="laporan.html">Laporan</a></li>
+                <li><a href="history.html" class="aktif">History</a></li>
+                <li><a href="#" class="link-logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>History Transaksi</h1>
+
+        <section>
+            <h2>Daftar Transaksi (Terbaru di Atas)</h2>
+            <div class="tabel-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Nomor DO</th>
+                            <th>Nama Pemesan</th>
+                            <th>Buku</th>
+                            <th>Pembayaran</th>
+                            <th class="kanan">Total</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="isiHistory"></tbody>
+                </table>
+            </div>
+            <br>
+            <button type="button" class="tombol-merah" id="tombolHapusHistory">Hapus Transaksi Checkout</button>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Toko Buku Cakra - Tugas UTS Pemrograman Web 1
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
